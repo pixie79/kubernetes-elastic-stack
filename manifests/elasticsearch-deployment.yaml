@@ -25,8 +25,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        - name: "CLUSTER_NAME"
-          value: "myesdb"
+        # - name: "CLUSTER_NAME"
+        #   value: "myesdb"
         - name: NODE_MASTER
           value: "true"
         - name: NODE_DATA

@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kibana
+  labels:
+    app: kibana
+    component: ingress
+  annotations:
+    # kubernetes.io/tls-acme: "true"
+    # ingress.kubernetes.io/auth-type: basic
+    # ingress.kubernetes.io/auth-secret: kibana-basic-auth
+    # ingress.kubernetes.io/auth-realm: "realm string"
+spec:
+  tls:
+  - secretName: kibana-tls
+    hosts:
+    - kibana.logging.minikube.localnet
+  rules:
+  - host: kibana.logging.minikube.localnet
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kibana
+          servicePort: 5601
+  # backend:
+  #   serviceName: grafana
+  #   servicePort: 3000

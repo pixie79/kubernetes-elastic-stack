@@ -5,11 +5,10 @@ metadata:
   labels:
     component: kibana
 spec:
-  type: NodePort
+  # type: NodePort
   ports:
   - port: 5601
     protocol: TCP
     targetPort: ui
-    nodePort: 30140
   selector:
     component: kibana

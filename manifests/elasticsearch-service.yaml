@@ -5,11 +5,10 @@ metadata:
   labels:
     component: elasticsearch
 spec:
-  type: NodePort
+  # type: NodePort
   ports:
   - port: 9200
     protocol: TCP
     targetPort: api
-    nodePort: 30130
   selector:
     component: elasticsearch
